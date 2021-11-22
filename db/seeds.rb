@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Skin.create(name: "AK Wild Lotus", price: 18.000, comment: "This is a rare skin"
+Skin.create(name: "AWP Desert Hydra", price: 14.533, comment: "This is a rare skin")
+Skin.create(name: "Glock Bullet Queen", price: 305, comment: "This is a rare skin")
+Skin.create(name: "M4A4 Howl", price: 22.359, comment: "This is a very rare skin")
+Skin.create(name: "Karambit Crimson Web", price: 6.111, comment: "This is a very rare skin")
+Skin.create(name: "Gloves King Snake", price: 2.790, comment: "This is a very rare skin")
+Skin.create(name: "Bowie Knife Fade", price: 1.956, comment: "This is a very rare skin")
+Skin.create(name: "USP Kill Confirmed", price: 873, comment: "This is a very rare skin")
+Skin.create(name: "Bloodseeker", price: 350, comment: "Ardor of the Scarlet Raven")
+Skin.create(name: "Pudge", price: 290, comment: "The Mad Harvest")
+Skin.create(name: "Invoker", price: 900, comment: "Acolyte of the Lost Arts")
+Skin.create(name: "Silencer", price: 290, comment: "Order of the Silvered Talon")
+Skin.create(name: "Omniknight", price: 190, comment: "Wings of the Paladin")
