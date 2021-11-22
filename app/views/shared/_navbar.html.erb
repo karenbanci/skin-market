@@ -1,7 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-</a>
+  <div>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag("logo.png") %>
+    <% end %>
+    <h3 class="navbar-text">Skin Hunters</h3>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,13 +16,13 @@
         <%= link_to "Home", root_path, class:"nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <%= link_to "Messages", "#", class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <%= link_to "Sign-In", new_user_session_path, class:"dropdown-item" %>
+          <%= link_to "Sign-in", new_user_session_path, class:"dropdown-item" %>
+          <%= link_to "Sign-out", "#", class: "dropdown-item" %>
         </div>
       </li>
     </ul>
