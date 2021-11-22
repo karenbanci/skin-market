@@ -7,6 +7,7 @@ class SkinsController < ApplicationController
 
   def create
     @skin = Skin.new(skin_params)
+    @skin.user = current_user
     if @skin.save
       redirect_to skin_path(@skin)
     else
@@ -20,7 +21,6 @@ class SkinsController < ApplicationController
 
   def skin_params
     params.require(:skin).permit(:name, :price, :comment)
-
   end
 
   def set_skin
