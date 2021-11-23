@@ -1,6 +1,10 @@
 class SkinsController < ApplicationController
   before_action :set_skin, only: %i[show]
 
+  def index
+    @skins = Skin.all
+  end
+
   def new
     @skin = Skin.new
   end
