@@ -1,5 +1,4 @@
 <div class="container mt-5">
-
   <%= link_to 'back to home', skins_path, class: 'btn btn-dark' %>
   <div class="card my-3" style="width: 640px; height: 500px">
     <div class="row g-0">
@@ -14,5 +13,14 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class='text-center'>Add a new order</h1>
+  <div>
+    <%= simple_form_for [@skin, @order] do |f| %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>

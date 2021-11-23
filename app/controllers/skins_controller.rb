@@ -19,7 +19,9 @@ class SkinsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @order = Order.new
+  end
 
   private
 
