@@ -5,10 +5,13 @@ class OrdersController < ApplicationController
     @orders = Order.where(user: current_user)
   end
 
-  def show; end
+  def show
+   skip_authorization
+  end
 
   def create
     @order = Order.new(skin: @skin, user: current_user)
+    skip_authorization
     if @order.save
       redirect_to order_path(@order)
     else
