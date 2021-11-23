@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
-  has_many :skins
+  belongs_to :skin
   belongs_to :user
 end
