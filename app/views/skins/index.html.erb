@@ -10,7 +10,7 @@
 <div class="container d-flex flex-wrap">
   <% @skins.each do |skin| %>
     <%= link_to skin_path(skin), class: 'text-decoration-none text-secondary' do %>
-      <div id="skin_id" class='card mt-3 ml-3'>
+      <div id="skin_id" class='card mt-3 ml-2 mr-2 mb-3'>
         <p><strong>Name:</strong> <%= skin.name %></p>
         <p><%= skin.comment %></p>
       </div>
