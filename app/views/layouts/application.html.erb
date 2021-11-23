@@ -19,11 +19,8 @@
     <%= render "shared/flashes" %>
   </body>
 
-  <footer class="bg-dark text-center text-white">
-    <!-- Grid container -->
-    <div class="container p-3 pb-0">
-      <!-- Section: Social media -->
-      <section class="mb-0">
+  <footer>
+    <div class="text-center p-3" style="background-color: #251935;">
         <!-- Facebook -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
           ><i class="fab fa-facebook-f"></i
@@ -38,15 +35,9 @@
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
           ><i class="fab fa-instagram"></i
         ></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: #251935;">
-      © 2021 Copyright:
-      <a class="text-white" href="#">SkinHunters</a>
+      <b class="text-white"> © 2021 Copyright:
+      <b class="text-white" >SkinHunters <%= image_tag("shared/logo.png", size: "45x55") %> </a>
     </div>
     <!-- Copyright -->
   </footer>
