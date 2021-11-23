@@ -1,6 +1,9 @@
 <div class="container mt-5">
-
   <%= link_to 'back to home', skins_path, class: 'btn btn-dark' %>
+  <% if policy(@skin).edit? %>
+    <%= link_to "Edit", edit_skin_path(@skin), class: 'btn btn-dark' %>
+    <%= link_to "Delete", @skin, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-dark'  %>
+  <% end %>
   <div class="card my-3" style="width: 640px; height: 500px">
     <div class="row g-0">
       <div class="col-md-4">
@@ -10,9 +13,18 @@
         <div class="card-body">
           <h5 class="card-title"><%= @skin.name %></h5>
           <p class="card-text"><%= @skin.comment %></p>
-          <p class="card-text"><small class="text-muted"><%= @skin.price %></small></p>
+          <p class="card-text"><small class="text-muted">$ <%= @skin.price %></small></p>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class='text-center'>Add a new order</h1>
+  <div>
+    <%= simple_form_for [@skin, @order] do |f| %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>
