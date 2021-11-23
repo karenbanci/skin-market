@@ -1,5 +1,4 @@
 <div class="container mt-5">
-
   <%= link_to 'back to home', skins_path, class: 'btn btn-dark' %>
   <% if policy(@skin).edit? %>
     <%= link_to "Edit", edit_skin_path(@skin), class: 'btn btn-dark' %>
@@ -18,5 +17,14 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class='text-center'>Add a new order</h1>
+  <div>
+    <%= simple_form_for [@skin, @order] do |f| %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>

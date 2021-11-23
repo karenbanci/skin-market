@@ -38,6 +38,7 @@ class SkinsController < ApplicationController
 
   def show
    skip_authorization
+   @order = Order.new
   end
 
   def destroy
