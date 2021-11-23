@@ -1,4 +1,6 @@
-User.create!(email: "admin@admin.com", password: "123123")
+Skin.destroy_all
+User.destroy_all
+User.create!(email: "admin@admin.com", password: "123123", admin: true)
 
 Skin.create!(user: User.first, name: "AK Wild Lotus", price: 18.000, comment: "This is a rare skin")
 Skin.create!(user: User.first, name: "AWP Desert Hydra", price: 14.533, comment: "This is a rare skin")

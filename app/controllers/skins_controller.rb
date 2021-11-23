@@ -1,5 +1,5 @@
 class SkinsController < ApplicationController
-  before_action :set_skin, only: %i[show edit update]
+  before_action :set_skin, only: %i[show edit update destroy]
 
   def index
     @skins = policy_scope(Skin)
