@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <%= link_to 'back to home', skins_path, class: 'btn btn-dark' %>
+  <%= link_to 'Home', skins_path, class: 'btn btn-dark' %>
   <% if policy(@skin).edit? %>
     <%= link_to "Edit", edit_skin_path(@skin), class: 'btn btn-dark' %>
     <%= link_to "Delete", @skin, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-dark'  %>
