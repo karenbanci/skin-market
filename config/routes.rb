@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'skins#index'
   get "profile", to: "pages#profile", as: :profile
   resources :skins, shallow: true do
-    resources :orders
+    resources :orders, only: %i[new create]
   end
 end
