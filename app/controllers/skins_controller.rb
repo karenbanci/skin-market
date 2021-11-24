@@ -50,7 +50,7 @@ class SkinsController < ApplicationController
   private
 
   def skin_params
-    params.require(:skin).permit(:name, :price, :comment)
+    params.require(:skin).permit(:name, :price, :comment, :photo)
   end
 
   def set_skin
