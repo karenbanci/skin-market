@@ -4,27 +4,19 @@
     <%= link_to "Edit", edit_skin_path(@skin), class: 'btn btn-dark' %>
     <%= link_to "Delete", @skin, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-dark'  %>
   <% end %>
-  <div class="card my-3" style="width: 640px; height: 500px">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="#">
+  <div class="card my-3 col col-lg-12 d-flex" style="width: 100%; height: 425px; background-color: #70609b;">
+    <div class="d-flex">
+      <div class="justify-content-start p-2">
+        <%= cl_image_tag @skin.photo.key, height: 400, width: 258, crop: :fill if @skin.photo.attached? %>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 text-white mr-5">
         <div class="card-body">
-          <h5 class="card-title"><%= @skin.name %></h5>
-          <p class="card-text"><%= @skin.comment %></p>
-          <p class="card-text"><small class="text-muted">$ <%= @skin.price %></small></p>
+          <h1 class="card-title"><%= @skin.name %></h1>
+          <h5 class="card-text"><%= @skin.comment %></h5>
+          <p class="card-text">$ <%= @skin.price %></p>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <h1 class='text-center'>Add a new order</h1>
-  <div>
-    <%= simple_form_for [@skin, @order] do |f| %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+  <%= link_to 'Buy', new_skin_order_path(@skin), class: 'btn btn-warning btn-block my-3'  %>
 </div>
