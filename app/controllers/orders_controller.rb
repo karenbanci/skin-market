@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_skin, only: %i[new create]
+  before_action :set_skin, only: %i[new create show]
 
   def index
     @orders = Order.where(user: current_user)
@@ -9,17 +9,28 @@ class OrdersController < ApplicationController
    authorize @order
   end
 
+  def new
+    @order = Order.new
+    authorize @order
+  end
+
   def create
-    @order = Order.new(skin: @skin, user: current_user)
-    skip_authorization
+    @order = Order.new
+    @order.skin = @skin
+    @order.user = current_user
+    authorize @order
     if @order.save
-      redirect_to order_path(@order)
+      redirect_to root_path
     else
-      redirect_to @skin
+      render :new
     end
   end
 
   private
+
+  def order_params
+    params.require(:order).permit(:skin_id)
+  end
 
   def set_order
     @order = Order.find(params[:id])
