@@ -16,8 +16,29 @@
   <body>
     <%= render "shared/navbar" %>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= render "shared/flashes" %>
   </body>
+
+  <footer>
+    <div class="text-center p-3" style="background-color: #251935;">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+
+      <b class="text-white"> © 2021 Copyright:
+      <b class="text-white" >SkinHunters <%= image_tag("shared/logo.png", size: "45x55") %> </a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 </html>

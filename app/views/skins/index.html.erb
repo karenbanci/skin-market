@@ -1,0 +1,26 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1624138149925-6c1dd2d60460?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);">
+  <div class="container">
+    <h1 class="text-center">The best place to find the skins you're looking for!</h1>
+    <p class="text-center mt-4">Buy and sell your skins with us!</p>
+  </div>
+</div>
+
+<div class="container my-5 d-flex">
+  <h3 class="text-white mr-5">Create your order</h3>
+  <%= link_to "Add Skin", new_skin_path, class:"btn btn-warning" %>
+</div>
+
+<div class="container mt-3">
+  <h3 class="text-white">These are the hottest skins:</h3>
+</div>
+<div class="container d-flex flex-wrap">
+  <% @skins.each do |skin| %>
+    <%= link_to skin_path(skin), class: 'text-decoration-none text-secondary' do %>
+      <div id="skin_id" class='card mt-3 ml-2 mr-2 mb-3'>
+      <%= cl_image_tag skin.photo.key, height: 190, width: 258, crop: :fill if skin.photo.attached? %>
+        <p><strong>Name:</strong> <%= skin.name %></p>
+        <p><%= skin.comment %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
