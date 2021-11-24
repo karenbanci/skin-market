@@ -4,10 +4,10 @@
     <%= link_to "Edit", edit_skin_path(@skin), class: 'btn btn-dark' %>
     <%= link_to "Delete", @skin, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-dark'  %>
   <% end %>
-  <div class="card my-3" style="width: 640px; height: 500px">
+  <div class="card my-3 col col-lg-12" style="width: 640px; height: 500px">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="#">
+        <%= cl_image_tag @skin.photo.key, height: 190, width: 258, crop: :fill if @skin.photo.attached? %>
       </div>
       <div class="col-md-8">
         <div class="card-body">
