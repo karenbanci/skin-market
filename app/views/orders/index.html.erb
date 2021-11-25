@@ -1,0 +1,20 @@
+<div class="container m-2">
+  <h1 class="text-white mb-5">This are your purchased skins:</h1>
+</div>
+
+
+<div class="row d-flex justify-content-center">
+  <% @orders.each do |order| %>
+    <div class="card-product col-12 p-0 col-md-3 m-3 border border-warnig">
+    <div class="flex-grow-0">
+      <%= cl_image_tag order.skin.photo.key, height: 120, width: 120, crop: :fill if order.skin.photo.attached? %>
+    </div>
+      <div class="card-product-infos flex-grow-1 pl-3">
+              <p class="text-muted"><%= order.skin.category %></p>
+                <h4 class="card-title fw-bold"><%= order.skin.name %></h4>
+                <p class="card-text"><%= order.skin.comment %></p>
+              <p class="text-black-50 mb-1">$ <%= order.skin.price %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
