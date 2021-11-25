@@ -1,4 +1,4 @@
-<div class="container bg-white rounded p-3 my-3 shadow">
+<div class="container rounded p-3 my-3 shadow" style="background-color: #70609b">
   <p><%= @user.name %></p>
   <% if current_user&.photo.key %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
