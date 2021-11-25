@@ -1,11 +1,49 @@
 class SkinsController < ApplicationController
   before_action :set_skin, only: %i[show edit update destroy]
 
+
+  # include PgSearch::Model
+  # pg_search_scope :search_by_title_and_synopsis,
+  #   against: [ :title, :synopsis ],
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
+
+
+
+
+
   def index
     @skins = policy_scope(Skin)
-
     @my_skins = @skins.where(user: current_user)
   end
+
+
+#   def index
+#     if params[:query].present?
+#       sql_query = " \
+#         skins.name @@ :query \
+#         # OR skins.category @@ :query \
+#         # OR skins.specific @@ :query \
+#       "
+#       @skins = Skin.joins(:category).where(sql_query, query: "%#{params[:query]}%")
+#     else
+#       @skins = Skin.all
+#     end
+#   end
+# end
+
+
+
+
+
+
+
+
+
+
+
+
 
   def new
     @skin = Skin.new
