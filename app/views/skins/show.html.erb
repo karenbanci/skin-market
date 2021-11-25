@@ -18,5 +18,7 @@
       </div>
     </div>
   </div>
-  <%= link_to 'Buy', new_skin_order_path(@skin), class: 'btn btn-warning btn-block my-3'  %>
+  <% unless policy(@skin).edit? %>
+   <%= link_to 'Buy', new_skin_order_path(@skin), class: 'btn btn-warning btn-block my-3'  %>
+  <% end %>
 </div>
