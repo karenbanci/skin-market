@@ -2,9 +2,11 @@ class SkinsController < ApplicationController
   before_action :set_skin, only: %i[show edit update destroy]
 
   def index
-    @skins = policy_scope(Skin)
-
-    @my_skins = @skins.where(user: current_user)
+    if params[:category].present?
+      @skins = policy_scope(Skin).where(category: params[:category])
+    else
+      @skins = policy_scope(Skin)
+    end
   end
 
   def new
