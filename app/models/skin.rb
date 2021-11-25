@@ -6,9 +6,9 @@ class Skin < ApplicationRecord
 
   # PG Search
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_synopsis,
-      against: [ :title, :synopsis ],
-      using: {
-      tsearch: { prefix: true }
-    }
+  pg_search_scope :search_by_name_and_category,
+                  against: [ :name, :category, :comment ],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
