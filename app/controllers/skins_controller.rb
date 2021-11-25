@@ -2,8 +2,18 @@ class SkinsController < ApplicationController
   before_action :set_skin, only: %i[show edit update destroy]
 
   def index
+    # Busca de categoria
     if params[:category].present?
       @skins = policy_scope(Skin).where(category: params[:category])
+    else
+      @skins = policy_scope(Skin)
+    end
+
+    @my_skins = @skins.where(user: current_user)
+
+    # Busca de searchbar
+    if params[:query].present?
+      @skins = Skin.search_by_name_and_category(params[:query])
     else
       @skins = policy_scope(Skin)
     end
