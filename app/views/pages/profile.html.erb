@@ -1,9 +1,40 @@
-<div class="container rounded p-3 my-3 shadow" style="background-color: #70609b">
-  <p><%= @user.name %></p>
-  <% if current_user&.photo.key %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-            <%= image_tag "https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
-  <%= link_to "Edit Profile", edit_user_registration_path,  class:"btn btn-warning" %>
+<div class="container">
+  <div class="container p-3">
+    <div class="card-product border-0 p-3 my-3 d-flex justify-content-between" style="background-color: transparent">
+      <div style="weight: 100px; height: 100px;">
+        <% if current_user&.photo.key %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                  <%= image_tag "https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+      </div>
+      <div class="mt-4">
+        <h1 class="text-white mb-5 mt-3">How goes the hunting, <%= @user.name %>?</h1>
+      </div>
+        <%= link_to "Edit Profile", edit_user_registration_path,  class:"btn btn-warning" %>
+    </div>
+  </div>
+
+
+  <div class="container mt-5" >
+    <h4 class="text-white mb-2">These are your purchased skins:</h4>
+  </div>
+
+
+  <div class="row d-flex justify-content-center" >
+    <% current_user.orders.each do |order| %>
+      <div class="card-product col-12 p-0 col-md-3 m-3 border border-warnig">
+      <div class="flex-grow-0">
+        <%= cl_image_tag order.skin.photo.key, height: 120, width: 120, crop: :fill if order.skin.photo.attached? %>
+      </div>
+        <div class="card-product-infos flex-grow-1 pl-3">
+                <p class="text-muted"><%= order.skin.category %></p>
+                  <h4 class="card-title fw-bold"><%= order.skin.name %></h4>
+                  <p class="card-text"><%= order.skin.comment %></p>
+                <p class="text-black-50 mb-1">$ <%= order.skin.price %></p>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
 </div>
