@@ -2,8 +2,9 @@ class OrdersController < ApplicationController
   before_action :set_skin, only: %i[new create show]
 
   def index
-    @orders = Order.where(user: current_user)
+    @orders = policy_scope(Order).where(user: current_user)
   end
+
 
   def show
    authorize @order

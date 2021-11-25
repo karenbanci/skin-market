@@ -1,0 +1,10 @@
+<div class="container d-flex flex-wrap">
+  <% @orders.each do |order| %>
+    <div id="skin_id" class='card mt-3 ml-2 mr-2 mb-3'>
+      <%= cl_image_tag order.skin.photo.key, height: 190, width: 258, crop: :fill if order.skin.photo.attached? %>
+      <%= order.skin.name %>
+      <%= order.skin.comment %>
+      <%= order.skin.price %>
+   </div>
+  <% end %>
+</div>
