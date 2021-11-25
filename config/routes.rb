@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'skins#index'
+  root to: 'pages#home'
   get "profile", to: "pages#profile", as: :profile
   resources :skins, shallow: true do
     resources :orders, only: %i[new create]

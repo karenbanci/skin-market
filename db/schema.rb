@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_11_25_152209) do
     t.string "name"
     t.integer "price"
     t.text "comment"
+    t.string "category"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

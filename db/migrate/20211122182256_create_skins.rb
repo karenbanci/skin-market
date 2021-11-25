@@ -4,6 +4,7 @@ class CreateSkins < ActiveRecord::Migration[6.1]
       t.string "name"
       t.integer "price"
       t.text "comment"
+      t.string "category"
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end
