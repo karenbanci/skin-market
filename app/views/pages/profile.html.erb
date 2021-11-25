@@ -1,4 +1,9 @@
-<div class="container form-inputs bg-white rounded p-3 my-3 shadow">
-  <p> Name : </p> <h4> <%= @user.name %> </h4>
-  <%= link_to "Edit Profile", edit_user_registration_path %>
+<div class="container bg-white rounded p-3 my-3 shadow">
+  <p><%= @user.name %></p>
+  <% if current_user&.photo.key %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+  <%= link_to "Edit Profile", edit_user_registration_path,  class:"btn btn-warning" %>
 </div>
