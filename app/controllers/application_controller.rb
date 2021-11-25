@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  # name device
+  before_action :configure_permitted_parameters, if:  :devise_controller?
   skip_before_action :authenticate_user!, only: %i[index]
   include Pundit
 
@@ -16,6 +18,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+# name device
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
