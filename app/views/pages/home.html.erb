@@ -20,7 +20,7 @@
       <%= cl_image_tag skin.photo.key, height: 190, width: 258, crop: :fill if skin.photo.attached? %>
         <p><strong>Name:</strong> <%= skin.name %></p>
         <p><%= skin.comment %></p>
-        <p>$<%= skin.price %></p>
+        <p>$ <%= skin.price %></p>
       </div>
     <% end %>
   <% end %>
