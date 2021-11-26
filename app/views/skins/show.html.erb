@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <%= link_to 'Home', skins_path, class: 'btn btn-dark' %>
+  <%= link_to 'Home', root_path, class: 'btn btn-dark' %>
   <% if policy(@skin).edit? %>
     <%= link_to "Edit", edit_skin_path(@skin), class: 'btn btn-dark' %>
     <%= link_to "Delete", @skin, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-dark'  %>
@@ -17,6 +17,7 @@
         <div class="text-white">
           <div class="card-body">
             <h1 class="card-title"><%= @skin.name %> </h1>
+            <p class="card-text"> Game: <%= @skin.category %> </p>
             <p class="card-text">$ <%= @skin.price %> </p>
             <h5 class="card-text"><%= @skin.comment %> </h5>
           </div>

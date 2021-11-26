@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+#searchbar {
+  width: 536px;
+  margin-left: 193px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#search-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+#btn {
+  margin-top: 40px;
+  margin-right: 200px;
+}
+
+#skin_id {
+  border-radius: 3px;
+}

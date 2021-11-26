@@ -24,8 +24,8 @@
                 input_html: { autocomplete: "current-password" } %>
     <div class="form-actions">
       <%= f.button :submit, "Update", class:"btn btn-warning" %>
-      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-warning" %>
-      <%= link_to "Back", :back, class:"btn btn-warning" %>
+      <%= link_to "Back", profile_path, class:"btn btn-warning" %>
+      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger" %>
     </div>
      <% end %>
 </div>
