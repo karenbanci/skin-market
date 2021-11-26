@@ -1,12 +1,12 @@
 <div class="container">
   <div class="container p-3">
     <div class="card-product border-0 p-3 my-3 d-flex justify-content-between" style="background-color: transparent">
-      <div style="weight: 100px; height: 100px;">
+      <div style="width: 100px; height: 110px;">
         <% if current_user&.photo.key %>
-                  <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% else %>
-                  <%= image_tag "https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% end %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "https://toppng.com/uploads/preview/app-icon-set-login-icon-comments-avatar-icon-11553436380yill0nchdm.png", class: "avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
       </div>
       <div class="mt-4">
         <h1 class="text-white mb-5 mt-3">How goes the hunting, <%= @user.name %>?</h1>
@@ -17,7 +17,7 @@
 
 
   <div class="container mt-5" >
-    <h4 class="text-white mb-2">These are your purchased skins:</h4>
+    <h4 class="text-white text-center mb-2">These are the skins you've gathered so far:</h4>
   </div>
 
 
