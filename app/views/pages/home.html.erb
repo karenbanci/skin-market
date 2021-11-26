@@ -1,10 +1,33 @@
-<%# Banner %>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="banner border-bottom border-warning" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1624138149925-6c1dd2d60460?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80); min-height:410px; background-size: cover;">
+        <div class="container">
+          <h1 class="text-center">The best place to find the skins you're looking for!</h1>
+          <p class="text-center mt-4">Buy and sell your skins with us!</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" style="min-height:144px;">
+      <div class="banner border-bottom border-warning" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dexerto.com/wp-content/uploads/2021/09/13/Dexerto-Header-4.jpg); min-height:410px; background-size: cover;">
+      </div>
+    </div>
+    <div class="carousel-item" style="min-height:144px;">
+      <div class="banner border-bottom border-warning" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.elo7.com.br/product/original/1C8F608/counter-strike-painel-festa-1x0-70cm-decoracao.jpg); min-height:410px; background-size: cover;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Banner
 <div class="banner border-bottom border-warning" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1624138149925-6c1dd2d60460?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);">
   <div class="container">
     <h1 class="text-center">The best place to find the skins you're looking for!</h1>
     <p class="text-center mt-4">Buy and sell your skins with us!</p>
   </div>
 </div>
+%>
+
 <%# Searchbar %>
 <div id="search-btn">
   <div id="searchbar">
@@ -21,10 +44,10 @@
   </div>
 </div>
 <%# Display das skins mais vendidas %>
-<div class="container mb-3">
-  <h3 class="text-white ml-2">These are the hottest skins:</h3>
+<div class="container mb-3 mt-1">
+  <h3 class="text-white ml-2">These are the hottest skins right now:</h3>
 </div>
-<div class="container d-flex flex-wrap mb-5">
+<div class="container d-flex flex-wrap">
   <% @skins.first(8).each do |skin| %>
     <%= link_to skin_path(skin), class: 'text-decoration-none text-secondary' do %>
       <div id="skin_id" class='card mt-3 ml-2 mr-2 mb-3'>
