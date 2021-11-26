@@ -21,10 +21,10 @@
   </div>
 </div>
 <%# Display das skins mais vendidas %>
-<div class="container mt-3">
+<div class="container mb-3">
   <h3 class="text-white ml-2">These are the hottest skins:</h3>
 </div>
-<div class="container d-flex flex-wrap">
+<div class="container d-flex flex-wrap mb-5">
   <% @skins.first(8).each do |skin| %>
     <%= link_to skin_path(skin), class: 'text-decoration-none text-secondary' do %>
       <div id="skin_id" class='card mt-3 ml-2 mr-2 mb-3'>

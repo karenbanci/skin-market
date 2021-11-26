@@ -14,7 +14,7 @@
   </div>
 </div>
 <%# Display de todas as skins %>
-<div id="show_all" class="container d-flex flex-wrap">
+<div id="show_all" class="container d-flex flex-wrap mb-5">
   <% @skins.each do |skin| %>
     <%= link_to skin_path(skin), class: 'text-decoration-none text-secondary' do %>
       <div id="skin_id" class='card mt-3 ml-2 mr-2 mb-3'>
